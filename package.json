@@ -1,0 +1,64 @@
+{
+  "name": "repro",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "routers": {
+        "types": "./dist/routers.d.ts",
+        "require": "./dist/routers.cjs",
+        "import": "./dist/routers.mjs"
+      },
+      "context": {
+        "types": "./dist/context.d.ts",
+        "require": "./dist/context.cjs",
+        "import": "./dist/context.mjs"
+      }
+    },
+    "./routers": {
+      "types": "./dist/routers.d.ts",
+      "require": "./dist/routers.cjs",
+      "import": "./dist/routers.mjs"
+    },
+    "./context": {
+      "types": "./dist/context.d.ts",
+      "require": "./dist/context.cjs",
+      "import": "./dist/context.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint --fix .",
+    "format": "prettier --write \"**/*.{{c,m,}js,{c,m,}ts,md,vue,json,yaml,yml}\""
+  },
+  "peerDependencies": {
+    "@trpc/client": "^10.5.0"
+  },
+  "dependencies": {
+    "@trpc/server": "^10.5.0",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.34.0",
+    "@tsconfig/node18-strictest-esm": "^1.0.1",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.12.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4",
+    "unbuild": "^1.0.2"
+  },
+  "packageManager": "pnpm@7.15.0"
+}
